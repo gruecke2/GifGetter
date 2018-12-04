@@ -96,31 +96,38 @@ function toggleGif(gif){
 /**
  * Click events
  */
-$("#gifAdd").on("click", function() {
+$("#gifAdd").on("click", function(event) {
+  event.preventDefault();
   var searchTerm = $("#search-text").val();
   addButton(searchTerm);
   $("#search-text").val("");
   //DEBUG: console.log("Hello I got clicked");
 });
 
-$("#resetBtn").on("click", function() {
+$("#resetBtn").on("click", function(event) {
+  event.preventDefault();
   clearButtons();
   clearGifs();
   //DEBUG: console.log("Should remove green buttons.")
 });
 
 //Accessing dynamically created gif buttons
-$(document).on("click", ".gifBtn", function(){
+$(document).on("click", ".gifBtn", function(event){
+  event.preventDefault();
   //DEBUG:
   //console.log(this);
   clearGifs();
   searchGIPHY($(this).val());
 });
 
-$(document).on("click", ".gif", function() {
+$(document).on("click", ".gif", function(event) {
+  event.preventDefault();
   toggleGif(this);
 });
 
+$("#search-form").submit(function(event){
+  event.preventDefault();
+});
 
 /**
  * Setting up initial buttons

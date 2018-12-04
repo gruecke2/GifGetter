@@ -2,7 +2,11 @@
  * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ *  
+ * Additional modifications to css file by Garret Rueckert
  */
+
+ 
 
 body {
   overflow-x: hidden;
@@ -34,7 +38,6 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  /* background-image: none; */
 }
 
 #wrapper.toggled #sidebar-wrapper {

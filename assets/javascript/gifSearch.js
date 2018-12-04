@@ -7,6 +7,11 @@
 //Key for GIPHY API
 var key = "w5Cema1HKR635UzNp9npJZxaXlDhnMtt";
 
+/**
+ * Formats the query URL and hits the giphy api for 
+ * 10 gifs to be added to the page.
+ * @param search The search term determined by a gif button
+ */
 function searchGIPHY(search) {
   //formatting query URL to hit giphy API
   var queryURL =
@@ -25,6 +30,11 @@ function searchGIPHY(search) {
   });
 }
 
+/**
+ * Adds a card gif to the page
+ * @param response AJAX response object 
+ * @param index Index in data[i].images...
+ */
 function addGIF(response, index) {
   var stillLink = response.data[index].images.downsized_still.url;
   var gifLink = response.data[index].images.downsized.url;
@@ -57,6 +67,12 @@ function addGIF(response, index) {
   $("#imagesDiv").append(card);
 }
 
+/**
+ * Adds a green gif button to the side panel
+ * that will display the gifs requested when
+ * pressed.
+ * @param searchTerm User entered search term
+ */
 function addButton(searchTerm) {
   if (searchTerm != "") {
     var item = $("<li>");
@@ -72,14 +88,24 @@ function addButton(searchTerm) {
   }
 }
 
+/**
+ * Removes gif buttons
+ */
 function clearButtons() {
   $("li").remove(".gifLI");
 }
 
+/**
+ * Removes the gifs from the page
+ */
 function clearGifs(){
   $("#imagesDiv").empty();
 }
 
+/**
+ * Toggles between moving and still image of gif
+ * @param gif The gif clicked 
+ */
 function toggleGif(gif){
   if($(gif).attr("data-state") === "still"){
 

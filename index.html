@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Unlock" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Gif Getter!</title>
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/simple-sidebar.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav" id="sidebar-buttons">
+          <li class="sidebar-brand text-danger" style="font-family:'Unlock', cursive">
+            Gif Search
+          </li>
+          <li>
+            <button class="btn btn-warning" id="resetBtn">Reset</button>
+          </li>
+          <li>
+            <form autocomplete="off">
+              <input type="hidden" autocomplete="false" />
+              <input type="text" name="search" id="search-text" />
+            </form>
+          </li>
+          <li>
+            <button class="btn btn-secondary" id="gifAdd">
+              Add a GIF button!
+            </button>
+          </li>
+          <li>
+            <div id="separator"></div>
+          </li>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <h1 style="font-family:'Unlock', cursive">THE GIF GETTER!</h1>
+          <p>Open the side panel and click a button to see gifs from GIPHY!<br> Or
+            fill in the text box to add your own magical button!
+          </p>
+          <div id="logo">
+            <img src="assets/images/giphy_logo_square_social.png" alt="giphyLogo" class="img-fluid" id="logo">
+          </div>
+          <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">
+            Toggle Menu
+          </a>
+          
+          <div id="imagesDiv">
+            <!-- Gifs go here -->
+          </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+
+    <script src="assets/javascript/gifSearch.js"></script>
+  </body>
+</html>

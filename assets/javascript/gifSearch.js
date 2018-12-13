@@ -24,9 +24,18 @@ function searchGIPHY(search) {
     method: "GET"
   }).then(function(response) {
     console.log(response);
+    //validate response in case of bad search
+    if(response.data.length > 0){
     for(var i = 0; i < 10; i++){
       addGIF(response, i);
     }
+  } else {
+    $("#imagesDiv").html("<h2>Oooops! Giphy had nothing for you!</h2>");
+  }
+  }).fail(function(err) {
+    console.log(err);
+    $("#imagesDiv").html("<h2>Oooops! Something broke!</h2>");
+    throw err;
   });
 }
 
@@ -155,10 +164,10 @@ $("#search-form").submit(function(event){
   event.preventDefault();
 });
 
+
 /**
  * Setting up initial buttons
  */
-
  addButton("Mario");
  addButton("Luigi");
  addButton("Bowser");
